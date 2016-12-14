@@ -113,7 +113,7 @@ export class UserController extends AdaptableController {
   }
 
   sendVerificationEmail(user) {
-    if (!this.shouldVerifyEmails) {
+    if (!this.shouldVerifyEmails || typeof user.authData !== 'undefined') {
       return;
     }
     const token = encodeURIComponent(user._email_verify_token);
