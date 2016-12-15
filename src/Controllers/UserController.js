@@ -112,8 +112,6 @@ export class UserController extends AdaptableController {
   }
 
   sendVerificationEmail(user) {
-    console.log('user', JSON.stringify(user));
-    console.log('user._hashed_password', user._hashed_password);
     if (!this.shouldVerifyEmails || typeof user._hashed_password === 'undefined') {
       return;
     }
