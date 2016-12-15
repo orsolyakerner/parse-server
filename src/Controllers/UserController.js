@@ -112,6 +112,8 @@ export class UserController extends AdaptableController {
   }
 
   sendVerificationEmail(user) {
+    console.log('user', JSON.stringify(user));
+    console.log('user.authData', user.authData);
     if (!this.shouldVerifyEmails || typeof user.authData !== 'undefined') {
       return;
     }
