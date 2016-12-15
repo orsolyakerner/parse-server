@@ -114,8 +114,8 @@ export class UserController extends AdaptableController {
 
   sendVerificationEmail(user) {
     console.log('user', JSON.stringify(user));
-    console.log('user.authData', user.authData);
-    if (!this.shouldVerifyEmails || typeof user.authData !== 'undefined') {
+    console.log('user.password', user.password);
+    if (!this.shouldVerifyEmails || typeof user.password === 'undefined') {
       return;
     }
     const token = encodeURIComponent(user._email_verify_token);
