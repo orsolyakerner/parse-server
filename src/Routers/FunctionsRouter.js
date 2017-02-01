@@ -102,6 +102,8 @@ export class FunctionsRouter extends PromiseRouter {
     const applicationId = req.config.applicationId;
     const theFunction = triggers.getFunction(functionName, applicationId);
     const theValidator = triggers.getValidator(req.params.functionName, applicationId);
+    console.log('req.baseUrl', req.baseUrl);
+    console.log('req.originalUrl', req.originalUrl);
     if (theFunction) {
       let params = Object.assign({}, req.body, req.query);
       params = parseParams(params);
