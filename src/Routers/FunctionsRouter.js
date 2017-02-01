@@ -112,6 +112,7 @@ export class FunctionsRouter extends PromiseRouter {
         installationId: req.info.installationId,
         log: req.config.loggerController,
         headers: req.headers,
+        version: (!isNaN(req.baseUrl.split("/")[1])) ? parseInt(req.baseUrl.split("/")[1]) : 0,
         functionName
       };
 
